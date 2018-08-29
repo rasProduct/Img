@@ -26,11 +26,15 @@
        
        var searchStr = location.search;
       
-       var str = searchStr.substr(5);//将searchStr字符串分割成数组，数组中的每一个元素为一个参数和参数值
-       alert(14);
+       var str = searchStr.substr(1);//将searchStr字符串分割成数组，数组中的每一个元素为一个参数和参数值
+       var item = str.split("&")
+       alert(15);
 
-       var msg=decodeURI(str);
-
+       var msg=decodeURI(item[0]);
+       var img_path=decodeURI(item[1]);
+       alert(msg);
+       alert(img_path);
+       
        
        
        document.getElementById("main_concent").innerHTML=msg;
