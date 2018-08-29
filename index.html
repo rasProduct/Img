@@ -27,14 +27,10 @@
        var searchStr = location.search;
       
        var str = searchStr.substr(5);//将searchStr字符串分割成数组，数组中的每一个元素为一个参数和参数值
-       alert(9);
-       try {
-  //在这里运行代码
-            var msg=decodeURIComponent(str);
-      } catch(err) {
-  //在这里处理错误
-           alert("出错啦！");
-      }
+       alert(10);
+
+       var msg=decodeURIComponent(str);
+
        
        
        document.getElementById("main_concent").innerHTML=str;
