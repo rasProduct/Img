@@ -18,12 +18,9 @@
 
 
     
-    <img id='img_concent_gp' style="width:110%"></br>
+    <img id='img_concent' style="width:110%"></br>
     
-    <div  id='main_concent_gp'></div>
-    <img id='img_concent_spark' style="width:110%"></br>
-    
-    <div  id='main_concent_spark'></div>
+    <div  id='main_concent'></div>
   <script>
       
        
@@ -33,19 +30,15 @@
        var item = str.split("&")
        //alert(17);
 
-       var msg_gp=decodeURI(item[0]);
-       var img_path_gp=decodeURI(item[1]);
-       var msg_spark=decodeURI(item[2]);
-       var img_path_spark=decodeURI(item[3]);
+       var msg=decodeURI(item[0]);
+       var img_path=decodeURI(item[1]);
        //alert(msg.substr(4));
        //alert(img_path.substr(4));
        
        
        
-       document.getElementById("main_concent_gp").innerHTML=msg_gp.substr(5);
-       document.getElementById("img_concent_gp").src=img_path_gp.substr(5);
-       document.getElementById("main_concent_spark").innerHTML=msg_spark.substr(5);
-       document.getElementById("img_concent_spark").src=img_path_spark.substr(5);
+       document.getElementById("main_concent").innerHTML=msg.substr(4);
+       document.getElementById("img_concent").src=img_path.substr(4);
      </script>
 </body>
 </html>
