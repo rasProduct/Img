@@ -20,7 +20,7 @@
 
     
     <img id='img_concent_gp' src="" style="width:110%"></br>
-    
+     <img id='img_concent_spark' src="" style="width:110%"></br>
    
   <script>
              var searchStr = location.search;
@@ -37,7 +37,9 @@
                         dataType: "text",
                         async: true
                     }).done(function (data) {
-                       document.getElementById("img_concent_gp").src=data;
+                       var x = data.split("&");
+                       document.getElementById("img_concent_gp").src=x[0];
+                          document.getElementById("img_concent_spark").src=x[1];
                     });
                
           });
