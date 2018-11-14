@@ -28,24 +28,28 @@
       
        
        var searchStr = location.search;
-      
-       var str = searchStr.substr(1);//将searchStr字符串分割成数组，数组中的每一个元素为一个参数和参数值
-       var item = str.split("&")
-       //alert(17);
-
-       var msg_gp=decodeURI(item[0]);
-       var img_path_gp=decodeURI(item[1]);
-       var msg_spark=decodeURI(item[2]);
-       var img_path_spark=decodeURI(item[3]);
-       //alert(msg.substr(4));
-       //alert(img_path.substr(4));
        
-       
-       
-       document.getElementById("main_concent_gp").innerHTML=msg_gp.substr(5);
-       document.getElementById("img_concent_gp").src=img_path_gp.substr(5);
-       document.getElementById("main_concent_spark").innerHTML=msg_spark.substr(5);
-       document.getElementById("img_concent_spark").src=img_path_spark.substr(5);
+        var str = searchStr.substr(1);//将searchStr字符串分割成数组，数组中的每一个元素为一个参数和参数值
+        var item = str.split("&")
+        var img_gp=decodeURI(item[0]);
+        var param=img_gp.substr(4);
+    
+                $(function() {
+                     $.ajax({
+                         type: "get",
+                         url: param,
+                         dataType: "text",
+                         async: true
+                     }).done(function (data) {
+                        var x = data.split("&");
+                       document.getElementById("main_concent_gp").innerHTML=x[0];
+        document.getElementById("img_concent_gp").src=x[1];
+        document.getElementById("main_concent_spark").innerHTML=x[2];
+        document.getElementById("img_concent_spark").src=x[3];
+     
+                     });
+                
+           });
      </script>
 </body>
 </html>
