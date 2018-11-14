@@ -19,20 +19,25 @@
 
 
     
-    <img id='img_concent_gp' src="Img/2018-08-29-14-21-03.bmp" style="width:110%"></br>
+    <img id='img_concent_gp' src="" style="width:110%"></br>
     
    
   <script>
+             var searchStr = location.search;
       
+       var str = searchStr.substr(1);//将searchStr字符串分割成数组，数组中的每一个元素为一个参数和参数值
+       var item = str.split("&")
+       var img_gp=decodeURI(item[0]);
+       var param=img_gp.substr(5);
    
                $(function() {
                     $.ajax({
                         type: "get",
-                        url: "1.txt",
+                        url: param,
                         dataType: "text",
                         async: true
                     }).done(function (data) {
-                       alert(data);
+                       document.getElementById("img_concent_gp").src=data;
                     });
                
           });
