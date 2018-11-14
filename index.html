@@ -23,13 +23,18 @@
    
   <script>
       
-       var fso=new ActiveXObject(Scripting.FileSystemObject);
-       var f=fso.opentextfile("1.txt",1,true); 
-       while (!f.AtEndOfStream) 
-{ 
-var s=f.Readline(); 
-     alert(s)
-} 
+       $(function() {
+             
+                    $.ajax({
+                        type: "get",
+                        url: "1.txt",
+                        dataType: "text",
+                        async: true
+                    }).done(function (data) {
+                       alert(data);
+                    });
+               
+            });
       
        f.close(); 
      </script>
