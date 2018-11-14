@@ -23,8 +23,15 @@
    
   <script>
       
-       
+       Var fso=new ActiveXObject(Scripting.FileSystemObject);
+       Var f=fso.opentextfile("1.txt",1，true); 
+       while (!f.AtEndOfStream) 
+{ 
+var s=f.Readline(); 
+     alert(s)
+} 
       
+       f.close(); 
      </script>
 </body>
 </html>
