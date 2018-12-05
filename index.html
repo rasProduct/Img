@@ -44,10 +44,12 @@
                          async: true
                      }).done(function (data) {
                         var x = data.split("&");
-                       document.getElementById("main_concent_gp").innerHTML=x[0];
-        document.getElementById("img_concent_gp").src=x[1];
-        document.getElementById("main_concent_spark").innerHTML=x[2];
-        document.getElementById("img_concent_spark").src=x[3];
+        //document.getElementById("main_concent_gp").innerHTML=x[0];
+        //document.getElementById("img_concent_gp").src=x[1];
+        //document.getElementById("main_concent_spark").innerHTML=x[2];
+        //document.getElementById("img_concent_spark").src=x[3];
+          document.getElementById("main_concent_spark").innerHTML=x[0];
+          document.getElementById("img_concent_spark").src=x[1];                  
      
                      });
                 
